@@ -10,7 +10,64 @@
 </head>
 
 <body>
-    <h1>동물의 숲 백과사전</h1>
+    <div id="whole-wrapper">
+        <!-- Filter -->
+        <div id="filter">
+            <!-- Hemi & Month Options -->
+            <div id="options">
+                <div id="hemisphere-selection">
+                    <label for="northern-hemisphere">북반구</label>
+                    <input checked type="radio" id="northern-hemisphere" name="hemisphere" value="north">
+                    <label for="southern-hemisphere">남반구</label>
+                    <input type="radio" id="southern-hemisphere" name="hemisphere" value="south">
+                </div>
+                <div id="month-selection">
+                    <label for="months">월:</label>
+                    <select name="months" id="month-list">
+                        <option value="jan">1월</option>
+                        <option value="feb">2월</option>
+                        <option value="mar">3월</option>
+                        <option value="apr">4월</option>
+                        <option value="may">5월</option>
+                        <option value="jun">6월</option>
+                        <option value="jul">7월</option>
+                        <option value="aug">8월</option>
+                        <option value="sep">9월</option>
+                        <option value="oct">10월</option>
+                        <option value="nov">11월</option>
+                        <option value="dec">12월</option>
+                    </select>
+                </div>
+            </div>
+            <div id="search-button">찾기</div>
+        </div>
+        <div id="result">
+            <div class="tab">
+                <button class="tablinks" onclick="openTab(event, 'insects')">곤충</button>
+                <button class="tablinks" onclick="openTab(event, 'fish')">물고기</button>
+                <button class="tablinks" onclick="openTab(event, 'sea-creatures')">해산물</button>
+            </div>
+            <div id="insects" class="tabcontent active">
+                <h3>곤충</h3>
+            </div>
+    
+            <div id="fish" class="tabcontent">
+                <h3>물고기</h3>
+            </div>
+    
+            <div id="sea-creatures" class="tabcontent">
+                <h3>해산물</h3>
+            </div>
+    
+        </div>
+
+
+
+
+    </div>
+
+
+    <!-- <h1>동물의 숲 백과사전</h1>
     <hr>
     <div id="hemisphere">
         <h2>지역</h2>
@@ -39,27 +96,17 @@
         </select>
     </div>
     <hr>
-    <div id="fish">
-        <h1>물고기</h1>
-        <div id="fish-list"></div>
+    <div id="search">
+        <button id="search_btn">Search</button>
     </div>
-    <script>
+    <hr>
+    <div id="container">
+        <div id="fish">
+            <h1>물고기</h1>
+            <div id="fish-list"></div>
+        </div>
+    </div> -->
 
-        fetch("http://acnhapi.com/v1/fish")
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                for (i = 0; i < Object.keys(data).length; i++) {
-                    if(Object.values(data)[i].availability.isAllYear){
-                        console.log(Object.values(data)[i])
-                        document.querySelector("#fish-list").innerHTML += "<h3>"+Object.values(data)[i].name["name-KRko"] + "</h3>" + "<img id='fish-img' src='"+Object.values(data)[i].image_uri+"'/>";
-                    }
-
-
-                }
-            });
-
-    </script>
 </body>
 
 </html>
