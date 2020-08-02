@@ -9,8 +9,8 @@ body {
 #whole-wrapper {
   box-sizing: border-box;
   margin: 0 auto;
-  width: 400px;
-  height: 100vh;
+  width: 420px;
+
   border: 1px solid black;
   background-color: white;
 }
