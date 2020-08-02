@@ -46,7 +46,7 @@ function searchFromAPI() {
 }
 
 function fetchFromAPI(tab, hemi, month){
-    fetch("http://acnhapi.com/v1/"+tab)
+    fetch("https://acnhapi.com/v1/"+tab)
     .then((response) => response.json())
     .then((data) => {
     display(data, tab, hemi, month); });
