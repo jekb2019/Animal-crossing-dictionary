@@ -63,10 +63,11 @@ function display(data, tab, hemi, month){
     for( var key in data){
         if(data.hasOwnProperty(key)){
             // 모든 selection에대한 프린트
-            if(data[key].availability.isAllYear){
-                container.innerHTML = container.innerHTML +"<img src="+ data[key].icon_uri+">"
+            if(month == "NA"){
+                if(data[key].availability.isAllYear){
+                    container.innerHTML = container.innerHTML +"<img src="+ data[key].icon_uri+">"
+                }
             }
-
         }
     }
 }
